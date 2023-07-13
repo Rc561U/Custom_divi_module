@@ -1,7 +1,14 @@
-# Wordpress-Docker-compose template.
+# Wordpress-Docker-compose template for development Divi modules.
+
+## Setup: 
+ 1. **PHP 8.1**
+2. **Nginx**
+3. **Mariadb**
+4. **Phpmyadmin** 
+5. **Docker & Docker-compose**
 
 
-### 1.Instalation:
+### 1. Instalation:
 ```shell
 docker-compose up
 ```
@@ -14,11 +21,16 @@ bash install.sh
 ```
 
 
-### Add to wp-config.php
+### 2. Add to wp-config.php
 ```
 define('FS_METHOD', 'direct');
 ```
-### Create DIVI extension
+### 3. Install the Divi theme manually (zip archive in root directory)
+### 4. Dive into docker container
+```shell
+docker-compose exec php bash
+```
+### 5. Create Divi extension
 ```shell
 cd wp-content/plugins/
 npx create-divi-extension my-extension
